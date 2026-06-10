@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Terminal, GitBranch, Cpu, Database, CheckCircle, Award } from "lucide-react";
 
 // Row 1 AI Tech Stack Modules
