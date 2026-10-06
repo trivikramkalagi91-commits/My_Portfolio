@@ -1,55 +1,23 @@
 "use client";
 import React from "react";
 
-const row1 = [
-  "AI Agents",
-  "Automation",
-  "Full-Stack",
-  "NLP & Analytics",
-  "Open Source",
-  "DSA",
-  "Hackathons",
-  "Python",
-  "LLM Orchestration",
+const items = [
+  "AI Agents", "LLM Orchestration", "Automation", "Full-Stack", "NLP",
+  "Python", "Next.js", "TypeScript", "Open Source", "Data Analytics",
+  "Prompt Engineering", "Hackathons",
 ];
-const row2 = [
-  "Next.js",
-  "TypeScript",
-  "React",
-  "Node.js",
-  "Tailwind",
-  "Git & GitHub",
-  "Framer Motion",
-  "Vercel",
-  "Prompt Engineering",
-];
-
-const Ticker = ({ items, reverse = false }: { items: string[]; reverse?: boolean }) => {
-  const doubled = [...items, ...items];
-  return (
-    <div className="w-full overflow-hidden py-3 select-none">
-      <div className={`marquee-track ${reverse ? "reverse" : ""} items-center gap-8 pr-8`}>
-        {doubled.map((word, i) => (
-          <div key={i} className="flex items-center gap-8 flex-shrink-0">
-            <span className="display text-5xl sm:text-6xl md:text-7xl text-bone/90 whitespace-nowrap">
-              {word}
-            </span>
-            <span className="text-accent text-4xl sm:text-5xl font-light">✦</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 export default function MarqueeSection() {
+  const doubled = [...items, ...items];
   return (
-    <section className="w-full bg-ink py-10 border-y border-bone/10 overflow-hidden relative">
-      <div className="opacity-90 -rotate-1">
-        <Ticker items={row1} />
-      </div>
-      <div className="opacity-50 rotate-1">
-        <Ticker items={row2} reverse />
+    <section className="w-full bg-surface border-y border-line py-5 overflow-hidden relative">
+      <div className="marquee-track items-center gap-10 pr-10">
+        {doubled.map((w, i) => (
+          <div key={i} className="flex items-center gap-10 flex-shrink-0">
+            <span className="display text-2xl sm:text-3xl text-ink/80 whitespace-nowrap">{w}</span>
+            <span className="grad-text text-xl font-bold">✦</span>
+          </div>
+        ))}
       </div>
     </section>
   );

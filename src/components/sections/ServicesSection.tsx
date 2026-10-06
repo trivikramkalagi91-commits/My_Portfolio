@@ -1,71 +1,84 @@
 "use client";
 import React from "react";
 import FadeIn from "../FadeIn";
-import { ArrowUpRight } from "lucide-react";
+import { Brain, Code2, Bot, Database, GitPullRequest, Trophy } from "lucide-react";
 
-const buildingItems = [
-  { num: "01", name: "DSA & Problem Solving", desc: "Sharpening algorithmic thinking through daily LeetCode practice and structured DSA study." },
-  { num: "02", name: "Open-Source Contributions", desc: "Shipping real code in public repos — 10+ merged PRs through GSSOC and beyond." },
-  { num: "03", name: "AI Agents & Automation", desc: "Designing agentic workflows, terminal agents, and LLM pipelines that do real work." },
-  { num: "04", name: "Software Projects", desc: "Taking ideas from whiteboard to production across web, AI, and data platforms." },
-  { num: "05", name: "Hackathons", desc: "Building and shipping under pressure — including a 3rd-prize winning agri-tech platform." },
-  { num: "06", name: "Future Startup Vision", desc: "Working toward impactful AI automation products — and founding my own company." },
+const capabilities = [
+  {
+    icon: Bot,
+    title: "AI Agents & Automation",
+    desc: "Designing agentic workflows, terminal agents, and LLM pipelines that execute real tasks end-to-end.",
+    tag: "Core Focus",
+  },
+  {
+    icon: Brain,
+    title: "NLP & Data Analytics",
+    desc: "Turning unstructured data and natural-language queries into actionable intelligence and patterns.",
+    tag: "SIDDHI",
+  },
+  {
+    icon: Code2,
+    title: "Full-Stack Development",
+    desc: "Shipping production web apps with Next.js, React, Node.js — from whiteboard to deployment.",
+    tag: "Web",
+  },
+  {
+    icon: Database,
+    title: "Data & Backend",
+    desc: "Building robust APIs, databases, and analytics layers that scale with the product.",
+    tag: "Backend",
+  },
+  {
+    icon: GitPullRequest,
+    title: "Open-Source Contribution",
+    desc: "10+ merged PRs through GSSOC — UI modules, bug fixes, and system integrations in real repos.",
+    tag: "GSSOC",
+  },
+  {
+    icon: Trophy,
+    title: "Hackathon Delivery",
+    desc: "Thriving under pressure — ideate, build, and ship polished solutions in 48 hours (3rd-prize winner).",
+    tag: "Winner",
+  },
 ];
 
 export default function ServicesSection() {
   return (
-    <section
-      id="focus"
-      className="relative w-full bg-cream text-cream-ink rounded-t-[40px] sm:rounded-t-[60px] md:rounded-t-[80px] -mt-6 pt-20 md:pt-28 pb-24 md:pb-32 overflow-hidden"
-    >
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-10">
+    <section id="focus" className="relative w-full bg-surface border-y border-line py-24 md:py-32">
+      <div className="max-w-7xl mx-auto px-6 md:px-10">
         <FadeIn delay={0} y={20}>
-          <div className="flex items-center gap-4 mb-10">
-            <span className="font-mono text-xs uppercase tracking-[0.35em] text-accent" style={{ color: "#ff5a1f" }}>
-              02 / Focus
-            </span>
-            <span className="h-px flex-grow bg-cream-ink/15" />
+          <div className="flex items-center gap-4 mb-6">
+            <span className="eyebrow">02 / Capabilities</span>
+            <span className="h-px flex-grow bg-line" />
           </div>
         </FadeIn>
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 md:mb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <FadeIn delay={0.1} y={30}>
-            <h2 className="display text-6xl sm:text-7xl md:text-8xl leading-[0.9]">
-              What I&apos;m
-              <br />
-              <span className="italic font-light" style={{ color: "#ff5a1f" }}>
-                building
-              </span>{" "}
-              now.
+            <h2 className="display text-4xl sm:text-5xl lg:text-6xl text-ink max-w-2xl leading-[1.05]">
+              What I bring to <span className="grad-text">your team</span>.
             </h2>
           </FadeIn>
           <FadeIn delay={0.2} y={20}>
-            <p className="max-w-xs text-sm text-cream-ink/60 leading-relaxed font-light">
-              Six areas where I invest my time today — each one compounds toward
-              building intelligent, automated products.
+            <p className="text-ink-soft max-w-sm text-sm leading-relaxed">
+              Six areas where I add immediate value — blending AI engineering with full-stack
+              shipping speed.
             </p>
           </FadeIn>
         </div>
 
-        {/* Numbered list */}
-        <div className="border-t border-cream-ink/15">
-          {buildingItems.map((item, idx) => (
-            <FadeIn key={item.num} delay={idx * 0.06} y={20}>
-              <div className="focus-row group flex items-center gap-6 sm:gap-10 py-7 sm:py-9 border-b border-cream-ink/15 px-2 sm:px-4 cursor-default">
-                <span className="font-mono text-sm sm:text-base text-cream-ink/40 group-hover:text-accent transition-colors flex-shrink-0 w-10">
-                  {item.num}
-                </span>
-                <h3 className="display text-2xl sm:text-3xl md:text-4xl flex-grow tracking-tight group-hover:translate-x-2 transition-transform duration-500">
-                  {item.name}
-                </h3>
-                <p className="hidden md:block max-w-xs text-sm text-cream-ink/55 group-hover:text-bone/70 leading-relaxed font-light">
-                  {item.desc}
-                </p>
-                <ArrowUpRight
-                  size={22}
-                  className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-                  style={{ color: "#ff5a1f" }}
-                />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {capabilities.map((c, i) => (
+            <FadeIn key={c.title} delay={0.15 + i * 0.07} y={25}>
+              <div className="card p-7 h-full flex flex-col group">
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo to-violet flex items-center justify-center text-white shadow-lg shadow-indigo/30 group-hover:scale-110 transition-transform duration-300">
+                    <c.icon size={22} />
+                  </div>
+                  <span className="chip !text-[10px] !py-1 !px-3">{c.tag}</span>
+                </div>
+                <h3 className="display text-xl text-ink mb-2">{c.title}</h3>
+                <p className="text-sm text-ink-soft leading-relaxed flex-grow">{c.desc}</p>
               </div>
             </FadeIn>
           ))}
