@@ -23,7 +23,7 @@ export default function ContactSection({ onContactClick }: ContactSectionProps) 
     <section className="relative w-full bg-black py-24 md:py-36 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <FadeIn delay={0} y={20}>
-          <div className="relative bg-lime text-black rounded-[32px] px-8 py-20 md:px-20 md:py-28 overflow-hidden">
+          <div className="relative bg-lime text-black border-4 border-black px-8 py-20 md:px-20 md:py-28 overflow-hidden shadow-[12px_12px_0_0_#000]">
             <div
               className="absolute inset-0 opacity-30"
               style={{
@@ -36,7 +36,7 @@ export default function ContactSection({ onContactClick }: ContactSectionProps) 
               <span className="font-mono text-[11px] uppercase tracking-[0.35em] text-black/70 mb-8 block">
                 05 / Contact
               </span>
-              <h2 className="display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl max-w-3xl mx-auto leading-[1]">
+              <h2 className="display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl max-w-4xl mx-auto leading-[0.95]">
                 Got a project? Let&apos;s build it.
               </h2>
               <p className="mt-8 max-w-xl mx-auto text-black/70 text-base sm:text-lg leading-relaxed">
@@ -45,7 +45,7 @@ export default function ContactSection({ onContactClick }: ContactSectionProps) 
               <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
                 <button
                   onClick={fire}
-                  className="bg-black text-lime rounded-full px-8 py-4 text-sm font-bold uppercase tracking-wider cursor-pointer inline-flex items-center gap-2 hover:scale-105 transition-transform shadow-xl"
+                  className="bg-black text-lime border-4 border-black px-8 py-4 text-sm font-bold uppercase tracking-wider cursor-pointer inline-flex items-center gap-2 hover:bg-lime hover:text-black transition-colors"
                 >
                   Start a project →
                 </button>

@@ -4,7 +4,7 @@
   --color-ink: #f2f2ed;
   --color-muted: #8a8a85;
   --color-lime: #ccff00;
-  --color-line: rgba(242, 242, 237, 0.12);
+  --color-line: rgba(242, 242, 237, 0.28);
   --color-panel: #111113;
   --font-display: var(--font-display), "Arial Narrow", sans-serif;
   --font-sans: var(--font-sans), system-ui, sans-serif;
@@ -154,9 +154,13 @@ body {
 /* Zebra striping for clear row separation */
 .acc-row:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
 .proj-row:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
-.acc-row { border-top-width: 2px; }
-.proj-row { border-top-width: 2px; }
-.acc-row:last-child, .proj-row:last-child { border-bottom-width: 2px; }
+.acc-row { border-top-width: 3px; }
+.proj-row { border-top-width: 3px; }
+.acc-row:last-child, .proj-row:last-child { border-bottom-width: 3px; }
+
+/* Brutalist: sharp square corners everywhere except cursor/orbs */
+* { border-radius: 0 !important; }
+.cursor-dot, .cursor-ring, .orb { border-radius: 9999px !important; }
 
 /* ---------- Floating code window ---------- */
 .code-window {
