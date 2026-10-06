@@ -26,8 +26,10 @@ body {
   background-color: #000;
   color: #f2f2ed;
   font-family: var(--font-sans), system-ui, sans-serif;
-  overflow-x: clip;
+  overflow-x: hidden;
+  max-width: 100%;
 }
+main { overflow-x: hidden; max-width: 100%; }
 
 /* ---------- Display (condensed uppercase) ---------- */
 .display {

@@ -94,7 +94,7 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
               <p className="font-mono text-xs uppercase tracking-[0.3em] text-lime mb-4">
                 Hey, I&apos;m
               </p>
-              <h1 className="display text-[16vw] sm:text-[13vw] lg:text-[7rem] xl:text-[8rem] text-ink leading-[0.9]">
+              <h1 className="display text-[14vw] sm:text-[12vw] lg:text-[7rem] xl:text-[8rem] text-ink leading-[0.9]">
                 Trivikram
                 <br />
                 <span className="text-stroke">Kalagi</span>
