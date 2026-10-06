@@ -54,7 +54,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="relative w-full bg-black py-24 md:py-32 overflow-hidden">
+    <section id="projects" className="relative w-full bg-black py-28 md:py-36 overflow-hidden">
       <div className="absolute w-[380px] h-[380px] rounded-full bg-lime/10 blur-[100px] bottom-20 -right-32 pointer-events-none" />
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
         <FadeIn delay={0} y={20}>
@@ -77,7 +77,7 @@ export default function ProjectsSection() {
                 href={p.live || p.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="proj-row group block px-2 py-7 sm:py-9 cursor-pointer"
+                className="proj-row group block px-2 py-9 sm:py-11 cursor-pointer"
               >
                 <div className="flex items-center gap-5 sm:gap-8">
                   <span className="font-mono text-sm text-current opacity-50 w-8 flex-shrink-0">

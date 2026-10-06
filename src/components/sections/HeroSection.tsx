@@ -147,7 +147,7 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
           </div>
 
           {/* Right: portrait + floating code windows */}
-          <div className="lg:col-span-5 relative h-[420px] hidden lg:block">
+          <div className="lg:col-span-5 relative h-[460px] hidden xl:block">
             <FadeIn delay={0.4} y={30}>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative">
@@ -170,7 +170,7 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
               </div>
 
               {/* Floating code windows */}
-              <div className="float-a absolute top-0 -left-6 w-[230px] z-20">
+              <div className="float-a absolute -top-4 -left-14 w-[210px] z-20">
                 <CodeWindow
                   title="agent.py"
                   lines={[
@@ -185,7 +185,7 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
                 />
               </div>
 
-              <div className="float-b absolute bottom-2 -right-4 w-[210px] z-20">
+              <div className="float-b absolute bottom-0 -right-12 w-[190px] z-20">
                 <CodeWindow
                   title="terminal — zsh"
                   lines={[
@@ -197,7 +197,7 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
                 />
               </div>
 
-              <div className="absolute top-1/2 -right-10 z-20 float-a" style={{ animationDelay: "1.5s" }}>
+              <div className="absolute -bottom-2 left-0 z-20 float-a" style={{ animationDelay: "1.5s" }}>
                 <div className="code-window px-4 py-3 flex items-center gap-2.5">
                   <Terminal size={14} className="text-lime" />
                   <span className="font-mono text-[10px] text-ink/80">

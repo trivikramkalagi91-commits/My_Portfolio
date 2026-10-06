@@ -32,7 +32,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="focus" className="relative w-full bg-panel border-y border-line py-24 md:py-32">
+    <section id="focus" className="relative w-full bg-panel border-y border-line py-28 md:py-36">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <FadeIn delay={0} y={20}>
           <div className="flex items-center gap-4 mb-6">
@@ -51,7 +51,7 @@ export default function ServicesSection() {
           {services.map((s, i) => (
             <FadeIn key={s.num} delay={0.15 + i * 0.07} y={20}>
               <div className={`acc-row group ${i === 0 ? "is-open" : ""}`}>
-                <div className="flex items-center gap-5 sm:gap-8 py-6 sm:py-7 px-2 cursor-default">
+                <div className="flex items-center gap-5 sm:gap-8 py-7 sm:py-9 px-2 cursor-default">
                   <span className="font-mono text-sm text-current opacity-60 w-8 flex-shrink-0">
                     {s.num}
                   </span>

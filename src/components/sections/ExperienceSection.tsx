@@ -51,24 +51,24 @@ export default function ExperienceSection() {
           </h2>
         </FadeIn>
 
-        <div className="relative max-w-3xl">
+        <div className="relative max-w-5xl">
           <div className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-lime via-lime/40 to-transparent" />
-          <div className="space-y-8">
+          <div className="space-y-10">
             {timeline.map((t, i) => (
               <FadeIn key={t.title} delay={0.15 + i * 0.08} y={25}>
-                <div className="relative flex gap-6">
+                <div className="relative flex gap-6 sm:gap-8">
                   <div className="relative z-10 w-14 h-14 flex-shrink-0 rounded-2xl bg-lime text-black flex items-center justify-center shadow-lg shadow-lime/20">
                     <t.icon size={22} strokeWidth={2.2} />
                   </div>
-                  <div className="border border-line rounded-2xl bg-black p-6 flex-grow hover:border-lime/40 transition-colors">
-                    <div className="flex flex-wrap items-center gap-3 mb-2">
-                      <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+                  <div className="border border-line rounded-2xl bg-black p-6 sm:p-7 flex-grow hover:border-lime/40 transition-colors">
+                    <div className="flex flex-wrap items-center gap-3 mb-2.5">
+                      <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
                         {t.period}
                       </span>
-                      <span className="text-[11px] text-lime font-semibold">{t.org}</span>
+                      <span className="text-xs text-lime font-semibold">{t.org}</span>
                     </div>
-                    <h3 className="display text-xl sm:text-2xl text-ink mb-1.5 tracking-wide">{t.title}</h3>
-                    <p className="text-sm text-ink/65 leading-relaxed">{t.desc}</p>
+                    <h3 className="display text-2xl sm:text-3xl text-ink mb-2 tracking-wide">{t.title}</h3>
+                    <p className="text-base text-ink/70 leading-relaxed max-w-2xl">{t.desc}</p>
                   </div>
                 </div>
               </FadeIn>

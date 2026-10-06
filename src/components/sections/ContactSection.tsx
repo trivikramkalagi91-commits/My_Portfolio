@@ -23,7 +23,7 @@ export default function ContactSection({ onContactClick }: ContactSectionProps) 
     <section className="relative w-full bg-black py-24 md:py-36 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <FadeIn delay={0} y={20}>
-          <div className="relative bg-lime text-black rounded-[32px] px-8 py-16 md:px-16 md:py-24 overflow-hidden">
+          <div className="relative bg-lime text-black rounded-[32px] px-8 py-20 md:px-20 md:py-28 overflow-hidden">
             <div
               className="absolute inset-0 opacity-30"
               style={{
@@ -32,17 +32,17 @@ export default function ContactSection({ onContactClick }: ContactSectionProps) 
                 backgroundSize: "48px 48px",
               }}
             />
-            <div className="relative z-10 flex flex-col items-center text-center">
-              <span className="font-mono text-[11px] uppercase tracking-[0.35em] text-black/70 mb-6 block">
+            <div className="relative z-10 flex flex-col items-center text-center w-full">
+              <span className="font-mono text-[11px] uppercase tracking-[0.35em] text-black/70 mb-8 block">
                 05 / Contact
               </span>
-              <h2 className="display text-4xl sm:text-5xl lg:text-7xl max-w-3xl leading-[0.95]">
+              <h2 className="display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl max-w-3xl mx-auto leading-[1]">
                 Got a project? Let&apos;s build it.
               </h2>
-              <p className="mt-6 max-w-lg text-black/70 text-base sm:text-lg">
+              <p className="mt-8 max-w-xl mx-auto text-black/70 text-base sm:text-lg leading-relaxed">
                 Internships, freelance, hackathon teams, or AI automation ideas — my inbox is open.
               </p>
-              <div className="mt-10 flex flex-col sm:flex-row items-center gap-4">
+              <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
                 <button
                   onClick={fire}
                   className="bg-black text-lime rounded-full px-8 py-4 text-sm font-bold uppercase tracking-wider cursor-pointer inline-flex items-center gap-2 hover:scale-105 transition-transform shadow-xl"
