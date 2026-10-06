@@ -43,28 +43,30 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-ink/40 backdrop-blur-sm cursor-pointer"
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm cursor-pointer"
           />
           <motion.div
             initial={{ opacity: 0, scale: 0.94, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 20 }}
             transition={{ type: "spring", duration: 0.5, bounce: 0.2 }}
-            className="relative z-10 w-full max-w-lg rounded-[28px] bg-surface border border-line p-7 shadow-2xl"
+            className="relative z-10 w-full max-w-lg rounded-[28px] bg-panel border border-line p-7 shadow-2xl"
           >
-            <div className="absolute -top-16 -right-10 w-48 h-48 rounded-full bg-gradient-to-br from-indigo/20 to-cyan/20 blur-3xl pointer-events-none" />
+            <div className="absolute -top-16 -right-10 w-48 h-48 rounded-full bg-lime/15 blur-3xl pointer-events-none" />
             <button
               onClick={onClose}
-              className="absolute right-5 top-5 rounded-full p-2 text-muted hover:bg-bg hover:text-ink transition-colors cursor-pointer"
+              className="absolute right-5 top-5 rounded-full p-2 text-muted hover:bg-ink/10 hover:text-ink transition-colors cursor-pointer"
               aria-label="Close"
             >
               <X size={18} />
             </button>
 
             <div className="mb-6 relative">
-              <span className="eyebrow block mb-2">Let&apos;s connect</span>
+              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-lime block mb-2">
+                Let&apos;s connect
+              </span>
               <h3 className="display text-3xl text-ink">
-                Say <span className="grad-text">hello</span>.
+                Say <span className="text-lime">hello</span>.
               </h3>
               <p className="text-sm text-muted mt-2">
                 Projects, collaborations, internships — or just a chat about AI.
@@ -75,11 +77,11 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               {rows.map((row) => (
                 <div
                   key={row.key}
-                  className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl border border-line bg-bg p-4 hover:border-indigo/40 transition-colors"
+                  className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 rounded-2xl border border-line bg-black p-4 hover:border-lime/50 transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="rounded-xl bg-gradient-to-br from-indigo to-violet p-2.5 text-white">
-                      <row.icon size={17} />
+                    <div className="rounded-xl bg-lime text-black p-2.5">
+                      <row.icon size={17} strokeWidth={2.2} />
                     </div>
                     <div>
                       <span className="block font-mono text-[9px] uppercase tracking-[0.25em] text-muted">
@@ -91,12 +93,12 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                   <div className="flex gap-2 self-end sm:self-auto">
                     <button
                       onClick={() => handleCopy(row.value.replace("+91 ", "").replace(" ", ""), row.key)}
-                      className="flex items-center gap-1.5 rounded-lg border border-line bg-surface px-3 py-1.5 text-[11px] font-mono text-ink-soft hover:border-indigo hover:text-indigo transition-colors cursor-pointer"
+                      className="flex items-center gap-1.5 rounded-lg border border-line bg-panel px-3 py-1.5 text-[11px] font-mono text-ink/70 hover:border-lime hover:text-lime transition-colors cursor-pointer"
                     >
                       {copiedType === row.key ? (
                         <>
-                          <Check size={13} className="text-emerald-500" />
-                          <span className="text-emerald-500">Copied</span>
+                          <Check size={13} className="text-lime" />
+                          <span className="text-lime">Copied</span>
                         </>
                       ) : (
                         <>
@@ -106,7 +108,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     </button>
                     <a
                       href={row.href}
-                      className="rounded-lg border border-line bg-surface p-1.5 text-ink-soft hover:border-indigo hover:text-indigo transition-colors"
+                      className="rounded-lg border border-line bg-panel p-1.5 text-ink/70 hover:border-lime hover:text-lime transition-colors"
                       aria-label={`Open ${row.label}`}
                     >
                       <ExternalLink size={14} />
@@ -121,16 +123,16 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 Find me online
               </span>
               <div className="grid grid-cols-3 gap-2">
-                <a href="https://www.linkedin.com/in/trivikram-kalagi-571289371" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center rounded-2xl border border-line bg-bg py-4 hover:border-indigo hover:bg-indigo/5 transition-all">
-                  <LinkedinIcon size={20} className="text-ink-soft mb-1.5" />
+                <a href="https://www.linkedin.com/in/trivikram-kalagi-571289371" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center rounded-2xl border border-line bg-black py-4 hover:border-lime hover:bg-lime/5 transition-all">
+                  <LinkedinIcon size={20} className="text-ink/80 mb-1.5" />
                   <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted">LinkedIn</span>
                 </a>
-                <a href="https://github.com/trivikramkalagi91-commits" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center rounded-2xl border border-line bg-bg py-4 hover:border-indigo hover:bg-indigo/5 transition-all">
-                  <GithubIcon size={20} className="text-ink-soft mb-1.5" />
+                <a href="https://github.com/trivikramkalagi91-commits" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center rounded-2xl border border-line bg-black py-4 hover:border-lime hover:bg-lime/5 transition-all">
+                  <GithubIcon size={20} className="text-ink/80 mb-1.5" />
                   <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted">GitHub</span>
                 </a>
-                <a href="https://leetcode.com/u/Trivikram17/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center rounded-2xl border border-line bg-bg py-4 hover:border-indigo hover:bg-indigo/5 transition-all">
-                  <span className="text-ink-soft font-bold mb-1.5 text-base leading-none">LC</span>
+                <a href="https://leetcode.com/u/Trivikram17/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center rounded-2xl border border-line bg-black py-4 hover:border-lime hover:bg-lime/5 transition-all">
+                  <span className="text-ink/80 font-bold mb-1.5 text-base leading-none">LC</span>
                   <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-muted">LeetCode</span>
                 </a>
               </div>

@@ -1,11 +1,37 @@
 "use client";
 import React from "react";
 import FadeIn from "../FadeIn";
-import { ArrowRight, Sparkles, Bot, Cpu, Zap } from "lucide-react";
+import { ArrowRight, Terminal } from "lucide-react";
 
 interface HeroSectionProps {
   onContactClick: () => void;
 }
+
+const CodeWindow = ({
+  title,
+  lines,
+  className = "",
+}: {
+  title: string;
+  lines: { text: string; color?: string }[];
+  className?: string;
+}) => (
+  <div className={`code-window ${className}`}>
+    <div className="flex items-center gap-1.5 px-3 py-2 border-b border-line bg-panel">
+      <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
+      <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
+      <span className="w-2.5 h-2.5 rounded-full bg-[#28c840]" />
+      <span className="ml-2 font-mono text-[10px] text-muted">{title}</span>
+    </div>
+    <div className="p-3.5 font-mono text-[10.5px] leading-relaxed space-y-1">
+      {lines.map((l, i) => (
+        <div key={i} style={{ color: l.color || "#b8b8b0" }}>
+          {l.text}
+        </div>
+      ))}
+    </div>
+  </div>
+);
 
 export default function HeroSection({ onContactClick }: HeroSectionProps) {
   const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -14,23 +40,20 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
   };
 
   return (
-    <section id="top" className="relative min-h-screen w-full flex flex-col bg-bg overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-grid opacity-70 pointer-events-none" />
-      <div className="orb w-[420px] h-[420px] bg-indigo/30 -top-32 -right-24" />
-      <div className="orb w-[380px] h-[380px] bg-cyan/25 top-1/3 -left-32" />
-      <div className="orb w-[300px] h-[300px] bg-violet/25 bottom-0 right-1/4" />
+    <section id="top" className="relative min-h-screen w-full flex flex-col bg-black overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-60 pointer-events-none" />
+      <div className="absolute w-[420px] h-[420px] rounded-full bg-lime/10 blur-[120px] -top-32 right-0 pointer-events-none" />
 
       {/* Nav */}
-      <nav className="relative z-30 w-full">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-5">
+      <nav className="relative z-30 w-full border-b border-line bg-black/70 backdrop-blur-md sticky top-0">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-4">
           <a href="#top" className="display text-xl text-ink">
-            Trivikram<span className="grad-text">.dev</span>
+            TVK<span className="text-lime">/</span>
           </a>
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {[
               { label: "About", id: "about" },
-              { label: "Capabilities", id: "focus" },
+              { label: "Services", id: "focus" },
               { label: "Work", id: "projects" },
               { label: "Journey", id: "experience" },
             ].map((l) => (
@@ -38,52 +61,52 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
                 key={l.id}
                 href={`#${l.id}`}
                 onClick={(e) => scrollTo(e, l.id)}
-                className="link-underline text-sm font-medium text-ink-soft hover:text-ink transition-colors"
+                className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted hover:text-lime transition-colors link-underline"
               >
                 {l.label}
               </a>
             ))}
-            <button
-              onClick={onContactClick}
-              className="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold cursor-pointer inline-flex items-center gap-1.5"
-            >
-              Let&apos;s talk <ArrowRight size={14} />
-            </button>
           </div>
+          <button
+            onClick={onContactClick}
+            className="btn-lime rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider cursor-pointer inline-flex items-center gap-1.5"
+          >
+            Hire me <ArrowRight size={13} />
+          </button>
         </div>
       </nav>
 
       {/* Hero body */}
       <div className="relative z-10 flex-grow flex items-center">
-        <div className="max-w-7xl mx-auto w-full px-6 md:px-10 py-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="max-w-7xl mx-auto w-full px-6 md:px-10 py-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left copy */}
-          <div className="lg:col-span-7 flex flex-col items-start">
+          <div className="lg:col-span-7">
             <FadeIn delay={0.1} y={20}>
-              <div className="inline-flex items-center gap-2 mb-6 border border-line bg-surface rounded-full px-4 py-1.5 shadow-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo opacity-60" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo" />
-                </span>
-                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-soft">
-                  Available for internships &amp; collaborations
+              <div className="inline-flex items-center gap-2 mb-6 border border-line rounded-full px-4 py-1.5">
+                <span className="w-2 h-2 rounded-full bg-lime animate-pulse" />
+                <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted">
+                  Software Engineer · AI Automation
                 </span>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.2} y={30}>
-              <h1 className="display text-5xl sm:text-6xl lg:text-7xl text-ink">
-                Building <span className="grad-text">AI</span> that
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-lime mb-4">
+                Hey, I&apos;m
+              </p>
+              <h1 className="display text-[16vw] sm:text-[13vw] lg:text-[7rem] xl:text-[8rem] text-ink leading-[0.9]">
+                Trivikram
                 <br />
-                does the <span className="grad-text">real work</span>.
+                <span className="text-stroke">Kalagi</span>
+                <span className="text-lime">.</span>
               </h1>
             </FadeIn>
 
             <FadeIn delay={0.35} y={20}>
-              <p className="mt-6 max-w-xl text-base sm:text-lg text-ink-soft leading-relaxed">
-                I&apos;m <span className="font-semibold text-ink">Trivikram Kalagi</span> — AI
-                engineer &amp; full-stack developer. From AI crime analytics for the Karnataka
-                State Police to hackathon-winning platforms and open-source tools, I turn ideas
-                into intelligent, automated products.
+              <p className="mt-6 max-w-lg text-ink/70 text-base leading-relaxed font-light">
+                I build <span className="text-lime font-semibold">AI agents &amp; automation</span> that
+                do the real work — from crime analytics for the Karnataka State Police to
+                hackathon-winning platforms and open-source tools.
               </p>
             </FadeIn>
 
@@ -91,96 +114,95 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <button
                   onClick={onContactClick}
-                  className="btn-primary rounded-full px-7 py-3.5 text-sm font-semibold cursor-pointer inline-flex items-center gap-2"
+                  className="btn-lime rounded-full px-7 py-3.5 text-xs font-bold uppercase tracking-wider cursor-pointer inline-flex items-center gap-2"
                 >
-                  Get in touch <ArrowRight size={15} />
+                  Hire me <ArrowRight size={14} />
                 </button>
                 <a
                   href="#projects"
                   onClick={(e) => scrollTo(e, "projects")}
-                  className="btn-ghost rounded-full px-7 py-3.5 text-sm font-semibold cursor-pointer inline-flex items-center gap-2"
+                  className="btn-outline rounded-full px-7 py-3.5 text-xs font-bold uppercase tracking-wider cursor-pointer inline-flex items-center gap-2"
                 >
-                  View projects
+                  View work
                 </a>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.65} y={20}>
-              <div className="mt-10 grid grid-cols-3 gap-6 w-full max-w-md">
+              <div className="mt-10 flex gap-10">
                 {[
                   { n: "10+", l: "Merged PRs" },
                   { n: "3rd", l: "Hackathon Prize" },
-                  { n: "4+", l: "Shipped Projects" },
+                  { n: "4+", l: "Projects" },
                 ].map((s) => (
                   <div key={s.l}>
-                    <div className="display text-3xl sm:text-4xl grad-text">{s.n}</div>
-                    <div className="text-xs text-muted mt-1 font-medium">{s.l}</div>
+                    <div className="display text-3xl sm:text-4xl text-lime">{s.n}</div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted mt-1">
+                      {s.l}
+                    </div>
                   </div>
                 ))}
               </div>
             </FadeIn>
           </div>
 
-          {/* Right: AI console visual */}
-          <div className="lg:col-span-5">
+          {/* Right: portrait + floating code windows */}
+          <div className="lg:col-span-5 relative h-[420px] hidden lg:block">
             <FadeIn delay={0.4} y={30}>
-              <div className="relative float-slow">
-                <div className="absolute -inset-4 rounded-[28px] bg-gradient-to-br from-indigo/20 via-violet/10 to-cyan/20 blur-2xl" />
-                <div className="relative glass rounded-[24px] overflow-hidden">
-                  {/* Window bar */}
-                  <div className="flex items-center gap-2 px-5 py-3.5 border-b border-line bg-white/60">
-                    <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
-                    <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
-                    <span className="w-3 h-3 rounded-full bg-[#28c840]" />
-                    <span className="ml-3 font-mono text-[11px] text-muted">tvk-agent — zsh</span>
-                    <Sparkles size={14} className="ml-auto text-indigo" />
-                  </div>
-                  {/* Console body */}
-                  <div className="p-5 font-mono text-[12px] leading-relaxed space-y-2.5">
-                    <div className="text-muted">$ <span className="text-ink">npx create ai-agent --automate</span></div>
-                    <div className="text-ink-soft">✓ Initializing agentic workflow…</div>
-                    <div className="flex items-center gap-2 text-ink-soft">
-                      <Bot size={13} className="text-indigo" />
-                      <span>Query → <span className="text-violet font-semibold">AgentLoop</span> → ToolCall</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-ink-soft">
-                      <Cpu size={13} className="text-cyan" />
-                      <span>Processing SIDDHI intel layer…</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Zap size={13} className="text-amber-500" />
-                      <span className="text-emerald-600 font-semibold">Pattern matched in Zone 4.</span>
-                    </div>
-                    <div className="pt-2 border-t border-dashed border-line mt-3">
-                      <span className="text-muted">$ </span>
-                      <span className="text-ink">deploy --prod</span>
-                      <span className="cursor-blink" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative">
+                  <div className="absolute -inset-4 rounded-[28px] bg-lime/15 blur-2xl" />
+                  <div className="relative rounded-[24px] overflow-hidden border border-line bg-panel p-1.5">
+                    <img
+                      src="https://shrug-person-78902957.figma.site/_components/v2/d24c01ad3a56fc65e942a1f501eb73db42d7cf9a/Rectangle_40443.81459862.png"
+                      alt="Trivikram Kalagi"
+                      className="h-[340px] w-auto object-contain select-none pointer-events-none"
+                      draggable={false}
+                    />
+                    <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between bg-black/70 backdrop-blur rounded-xl px-3 py-1.5 border border-line">
+                      <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-ink/80">
+                        REVA University
+                      </span>
+                      <span className="font-mono text-[9px] text-lime font-bold">CS · 2026</span>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                {/* Floating mini cards */}
-                <div className="absolute -left-6 top-16 glass rounded-2xl px-4 py-3 hidden sm:block">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-indigo to-violet flex items-center justify-center text-white">
-                      <Bot size={15} />
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold text-ink">AI Agents</div>
-                      <div className="text-[10px] text-muted">Agentic workflows</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute -right-4 bottom-10 glass rounded-2xl px-4 py-3 hidden sm:block">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-cyan to-indigo flex items-center justify-center text-white">
-                      <Zap size={15} />
-                    </div>
-                    <div>
-                      <div className="text-xs font-semibold text-ink">Automation</div>
-                      <div className="text-[10px] text-muted">42.8% token saved</div>
-                    </div>
-                  </div>
+              {/* Floating code windows */}
+              <div className="float-a absolute top-0 -left-6 w-[230px] z-20">
+                <CodeWindow
+                  title="agent.py"
+                  lines={[
+                    { text: "from llm import AgentLoop", color: "#ccff00" },
+                    { text: "" },
+                    { text: "agent = AgentLoop(" },
+                    { text: '  task="crime_analytics",', color: "#8ab4f8" },
+                    { text: "  tools=[nlp, db, geo]", color: "#8ab4f8" },
+                    { text: ")" },
+                    { text: "agent.run()  # Zone 4 match ✓", color: "#34d399" },
+                  ]}
+                />
+              </div>
+
+              <div className="float-b absolute bottom-2 -right-4 w-[210px] z-20">
+                <CodeWindow
+                  title="terminal — zsh"
+                  lines={[
+                    { text: "$ deploy siddhi --prod", color: "#f2f2ed" },
+                    { text: "✓ build passed (17.3s)", color: "#34d399" },
+                    { text: "✓ 10+ PRs merged (GSSOC)", color: "#34d399" },
+                    { text: "$ _", color: "#ccff00" },
+                  ]}
+                />
+              </div>
+
+              <div className="absolute top-1/2 -right-10 z-20 float-a" style={{ animationDelay: "1.5s" }}>
+                <div className="code-window px-4 py-3 flex items-center gap-2.5">
+                  <Terminal size={14} className="text-lime" />
+                  <span className="font-mono text-[10px] text-ink/80">
+                    automating... <span className="caret" />
+                  </span>
                 </div>
               </div>
             </FadeIn>

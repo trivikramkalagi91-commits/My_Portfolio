@@ -30,7 +30,7 @@ export default function Home() {
   const close = () => setIsContactOpen(false);
 
   return (
-    <main className="relative min-h-screen w-full bg-bg text-ink overflow-x-clip">
+    <main className="relative min-h-screen w-full bg-black text-ink overflow-x-clip">
       <CustomCursor />
 
       <HeroSection onContactClick={open} />
@@ -44,35 +44,30 @@ export default function Home() {
       <ContactModal isOpen={isContactOpen} onClose={close} />
 
       {/* ---------- Footer ---------- */}
-      <footer className="relative w-full bg-surface border-t border-line px-6 md:px-10 pt-14 pb-8">
+      <footer className="relative w-full bg-black border-t border-line px-6 md:px-10 pt-14 pb-8">
         <div className="max-w-7xl mx-auto flex flex-col gap-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div>
-              <div className="display text-2xl text-ink mb-2">
-                Trivikram<span className="grad-text">.dev</span>
-              </div>
-              <p className="text-sm text-muted max-w-sm">
-                AI engineer & full-stack developer building intelligent automation.
-              </p>
+            <div className="display text-3xl md:text-4xl text-ink">
+              TRIVIKRAM<span className="text-lime">.</span>KALAGI
             </div>
             <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted">
-              © {new Date().getFullYear()} Trivikram Kalagi — All rights reserved
+              © {new Date().getFullYear()} — Built with caffeine &amp; curiosity
             </p>
           </div>
           <div className="flex flex-wrap gap-x-8 gap-y-3 border-t border-line pt-6">
-            <a href="mailto:trivikramkalagi91@gmail.com" className="link-underline text-sm text-ink-soft hover:text-indigo transition-colors inline-flex items-center gap-2 w-fit">
+            <a href="mailto:trivikramkalagi91@gmail.com" className="link-underline text-sm text-muted hover:text-lime transition-colors inline-flex items-center gap-2 w-fit">
               <Mail size={14} /> trivikramkalagi91@gmail.com
             </a>
-            <a href="tel:6361008605" className="link-underline text-sm text-ink-soft hover:text-indigo transition-colors inline-flex items-center gap-2 w-fit">
+            <a href="tel:6361008605" className="link-underline text-sm text-muted hover:text-lime transition-colors inline-flex items-center gap-2 w-fit">
               <Phone size={14} /> +91 63610 08605
             </a>
-            <a href="https://www.linkedin.com/in/trivikram-kalagi-571289371" target="_blank" rel="noopener noreferrer" className="link-underline text-sm text-ink-soft hover:text-indigo transition-colors inline-flex items-center gap-2 w-fit">
+            <a href="https://www.linkedin.com/in/trivikram-kalagi-571289371" target="_blank" rel="noopener noreferrer" className="link-underline text-sm text-muted hover:text-lime transition-colors inline-flex items-center gap-2 w-fit">
               <LinkedinIcon size={14} /> LinkedIn <ArrowUpRight size={12} />
             </a>
-            <a href="https://github.com/trivikramkalagi91-commits" target="_blank" rel="noopener noreferrer" className="link-underline text-sm text-ink-soft hover:text-indigo transition-colors inline-flex items-center gap-2 w-fit">
+            <a href="https://github.com/trivikramkalagi91-commits" target="_blank" rel="noopener noreferrer" className="link-underline text-sm text-muted hover:text-lime transition-colors inline-flex items-center gap-2 w-fit">
               <GithubIcon size={14} /> GitHub <ArrowUpRight size={12} />
             </a>
-            <a href="https://leetcode.com/u/Trivikram17/" target="_blank" rel="noopener noreferrer" className="link-underline text-sm text-ink-soft hover:text-indigo transition-colors inline-flex items-center gap-2 w-fit">
+            <a href="https://leetcode.com/u/Trivikram17/" target="_blank" rel="noopener noreferrer" className="link-underline text-sm text-muted hover:text-lime transition-colors inline-flex items-center gap-2 w-fit">
               <span className="font-bold text-xs">LC</span> LeetCode <ArrowUpRight size={12} />
             </a>
           </div>

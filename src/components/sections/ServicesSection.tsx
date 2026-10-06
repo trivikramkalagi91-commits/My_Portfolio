@@ -1,84 +1,80 @@
 "use client";
 import React from "react";
 import FadeIn from "../FadeIn";
-import { Brain, Code2, Bot, Database, GitPullRequest, Trophy } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
-const capabilities = [
+const services = [
   {
-    icon: Bot,
-    title: "AI Agents & Automation",
-    desc: "Designing agentic workflows, terminal agents, and LLM pipelines that execute real tasks end-to-end.",
-    tag: "Core Focus",
-  },
-  {
-    icon: Brain,
-    title: "NLP & Data Analytics",
-    desc: "Turning unstructured data and natural-language queries into actionable intelligence and patterns.",
-    tag: "SIDDHI",
-  },
-  {
-    icon: Code2,
+    num: "01",
     title: "Full-Stack Development",
-    desc: "Shipping production web apps with Next.js, React, Node.js — from whiteboard to deployment.",
-    tag: "Web",
+    desc: "End-to-end web apps with Next.js, React, Node.js — from database to deployed UI. I ship production-ready products fast.",
+    tags: ["Next.js", "React", "Node.js", "TypeScript"],
   },
   {
-    icon: Database,
-    title: "Data & Backend",
-    desc: "Building robust APIs, databases, and analytics layers that scale with the product.",
-    tag: "Backend",
+    num: "02",
+    title: "AI Agents & Automation",
+    desc: "Designing agentic workflows, LLM pipelines, and terminal agents that automate real tasks — with tool-use and orchestration.",
+    tags: ["LLMs", "Agentic AI", "Prompt Eng.", "Automation"],
   },
   {
-    icon: GitPullRequest,
-    title: "Open-Source Contribution",
-    desc: "10+ merged PRs through GSSOC — UI modules, bug fixes, and system integrations in real repos.",
-    tag: "GSSOC",
+    num: "03",
+    title: "Backend & API Development",
+    desc: "Robust APIs, databases, and data pipelines that scale. Clean architecture, real integrations, and monitoring.",
+    tags: ["Python", "REST APIs", "SQL", "Data"],
   },
   {
-    icon: Trophy,
-    title: "Hackathon Delivery",
-    desc: "Thriving under pressure — ideate, build, and ship polished solutions in 48 hours (3rd-prize winner).",
-    tag: "Winner",
+    num: "04",
+    title: "AI & Automation Consulting",
+    desc: "Helping teams identify what to automate, prototype AI features, and integrate LLMs into existing products.",
+    tags: ["Prototyping", "LLM Integration", "Workflow"],
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section id="focus" className="relative w-full bg-surface border-y border-line py-24 md:py-32">
+    <section id="focus" className="relative w-full bg-panel border-y border-line py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <FadeIn delay={0} y={20}>
           <div className="flex items-center gap-4 mb-6">
-            <span className="eyebrow">02 / Capabilities</span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-lime">02 / What I can do</span>
             <span className="h-px flex-grow bg-line" />
           </div>
         </FadeIn>
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
-          <FadeIn delay={0.1} y={30}>
-            <h2 className="display text-4xl sm:text-5xl lg:text-6xl text-ink max-w-2xl leading-[1.05]">
-              What I bring to <span className="grad-text">your team</span>.
-            </h2>
-          </FadeIn>
-          <FadeIn delay={0.2} y={20}>
-            <p className="text-ink-soft max-w-sm text-sm leading-relaxed">
-              Six areas where I add immediate value — blending AI engineering with full-stack
-              shipping speed.
-            </p>
-          </FadeIn>
-        </div>
+        <FadeIn delay={0.1} y={30}>
+          <h2 className="display text-5xl sm:text-6xl lg:text-7xl text-ink mb-14 leading-[0.95]">
+            What I can <span className="text-lime">do</span> for you
+          </h2>
+        </FadeIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {capabilities.map((c, i) => (
-            <FadeIn key={c.title} delay={0.15 + i * 0.07} y={25}>
-              <div className="card p-7 h-full flex flex-col group">
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo to-violet flex items-center justify-center text-white shadow-lg shadow-indigo/30 group-hover:scale-110 transition-transform duration-300">
-                    <c.icon size={22} />
-                  </div>
-                  <span className="chip !text-[10px] !py-1 !px-3">{c.tag}</span>
+        <div>
+          {services.map((s, i) => (
+            <FadeIn key={s.num} delay={0.15 + i * 0.07} y={20}>
+              <div className={`acc-row group ${i === 0 ? "is-open" : ""}`}>
+                <div className="flex items-center gap-5 sm:gap-8 py-6 sm:py-7 px-2 cursor-default">
+                  <span className="font-mono text-sm text-current opacity-60 w-8 flex-shrink-0">
+                    {s.num}
+                  </span>
+                  <h3 className="display text-2xl sm:text-3xl md:text-4xl flex-grow tracking-wide">
+                    {s.title}
+                  </h3>
+                  <ChevronDown size={22} className="acc-chevron flex-shrink-0 opacity-70" />
                 </div>
-                <h3 className="display text-xl text-ink mb-2">{c.title}</h3>
-                <p className="text-sm text-ink-soft leading-relaxed flex-grow">{c.desc}</p>
+                <div className="acc-body px-2 sm:pl-16">
+                  <p className="text-sm sm:text-base leading-relaxed max-w-2xl opacity-80 pb-4">
+                    {s.desc}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {s.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="px-3 py-1 rounded-full border border-current/30 font-mono text-[10px] uppercase tracking-wider opacity-80"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </FadeIn>
           ))}
