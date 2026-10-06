@@ -1,91 +1,71 @@
 "use client";
-
 import React from "react";
 import FadeIn from "../FadeIn";
+import { ArrowUpRight } from "lucide-react";
 
 const buildingItems = [
-  {
-    num: "01",
-    name: "DSA & Problem Solving",
-    desc: "Building strong algorithmic thinking through consistent practice and LeetCode challenges.",
-  },
-  {
-    num: "02",
-    name: "Open Source Contributions",
-    desc: "Contributing to real-world projects through GSSOC and collaborative development.",
-  },
-  {
-    num: "03",
-    name: "AI Agents & Automation",
-    desc: "Exploring intelligent systems, AI workflows, terminal agents, and automation tools.",
-  },
-  {
-    num: "04",
-    name: "Software Projects",
-    desc: "Transforming ideas into practical applications through full project development.",
-  },
-  {
-    num: "05",
-    name: "Hackathons",
-    desc: "Collaborating, innovating, and shipping solutions under competitive environments.",
-  },
-  {
-    num: "06",
-    name: "Future Startup Vision",
-    desc: "Working toward creating impactful AI automation products and building an AI automation startup.",
-  },
+  { num: "01", name: "DSA & Problem Solving", desc: "Sharpening algorithmic thinking through daily LeetCode practice and structured DSA study." },
+  { num: "02", name: "Open-Source Contributions", desc: "Shipping real code in public repos — 10+ merged PRs through GSSOC and beyond." },
+  { num: "03", name: "AI Agents & Automation", desc: "Designing agentic workflows, terminal agents, and LLM pipelines that do real work." },
+  { num: "04", name: "Software Projects", desc: "Taking ideas from whiteboard to production across web, AI, and data platforms." },
+  { num: "05", name: "Hackathons", desc: "Building and shipping under pressure — including a 3rd-prize winning agri-tech platform." },
+  { num: "06", name: "Future Startup Vision", desc: "Working toward impactful AI automation products — and founding my own company." },
 ];
 
 export default function ServicesSection() {
   return (
     <section
-      id="services"
-      className="relative w-full bg-[#FFFFFF] text-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] py-20 sm:py-24 md:py-32 z-10"
+      id="focus"
+      className="relative w-full bg-cream text-cream-ink rounded-t-[40px] sm:rounded-t-[60px] md:rounded-t-[80px] -mt-6 pt-20 md:pt-28 pb-24 md:pb-32 overflow-hidden"
     >
-      <div className="w-full max-w-5xl mx-auto px-6 md:px-10">
-        {/* Section Heading */}
-        <div className="mb-16 sm:mb-20 md:mb-28 text-center select-none">
-          <FadeIn delay={0} y={40}>
-            <h2
-              className="font-black uppercase tracking-tight text-[#0C0C0C]"
-              style={{ fontSize: "clamp(2rem, 6.5vw, 80px)", lineHeight: "0.9" }}
-            >
-              What I&apos;m Building
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 md:px-10">
+        <FadeIn delay={0} y={20}>
+          <div className="flex items-center gap-4 mb-10">
+            <span className="font-mono text-xs uppercase tracking-[0.35em] text-accent" style={{ color: "#ff5a1f" }}>
+              02 / Focus
+            </span>
+            <span className="h-px flex-grow bg-cream-ink/15" />
+          </div>
+        </FadeIn>
+
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 md:mb-20">
+          <FadeIn delay={0.1} y={30}>
+            <h2 className="display text-6xl sm:text-7xl md:text-8xl leading-[0.9]">
+              What I&apos;m
+              <br />
+              <span className="italic font-light" style={{ color: "#ff5a1f" }}>
+                building
+              </span>{" "}
+              now.
             </h2>
+          </FadeIn>
+          <FadeIn delay={0.2} y={20}>
+            <p className="max-w-xs text-sm text-cream-ink/60 leading-relaxed font-light">
+              Six areas where I invest my time today — each one compounds toward
+              building intelligent, automated products.
+            </p>
           </FadeIn>
         </div>
 
-        {/* Vertical List of Items */}
-        <div className="flex flex-col border-t border-[rgba(12,12,12,0.15)]">
+        {/* Numbered list */}
+        <div className="border-t border-cream-ink/15">
           {buildingItems.map((item, idx) => (
-            <FadeIn
-              key={item.num}
-              delay={idx * 0.1}
-              y={30}
-              className="flex items-center gap-6 sm:gap-10 py-8 sm:py-10 md:py-12 border-b border-[rgba(12,12,12,0.15)] transition-all duration-300 hover:bg-[#0c0c0c]/[0.02] px-2"
-            >
-              {/* Number (Left) */}
-              <div
-                className="font-black text-[#0C0C0C] select-none flex-shrink-0 min-w-[70px] sm:min-w-[120px] md:min-w-[160px] leading-none"
-                style={{ fontSize: "clamp(2.2rem, 7vw, 100px)" }}
-              >
-                {item.num}
-              </div>
-
-              {/* Title & Description Stack (Right) */}
-              <div className="flex flex-col gap-2 md:gap-3 flex-grow">
-                <h3
-                  className="font-bold uppercase text-[#0C0C0C] tracking-wide"
-                  style={{ fontSize: "clamp(1rem, 2vw, 1.8rem)" }}
-                >
+            <FadeIn key={item.num} delay={idx * 0.06} y={20}>
+              <div className="focus-row group flex items-center gap-6 sm:gap-10 py-7 sm:py-9 border-b border-cream-ink/15 px-2 sm:px-4 cursor-default">
+                <span className="font-mono text-sm sm:text-base text-cream-ink/40 group-hover:text-accent transition-colors flex-shrink-0 w-10">
+                  {item.num}
+                </span>
+                <h3 className="display text-2xl sm:text-3xl md:text-4xl flex-grow tracking-tight group-hover:translate-x-2 transition-transform duration-500">
                   {item.name}
                 </h3>
-                <p
-                  className="font-light text-[#0C0C0C] leading-relaxed max-w-2xl opacity-75"
-                  style={{ fontSize: "clamp(0.85rem, 1.4vw, 1.15rem)" }}
-                >
+                <p className="hidden md:block max-w-xs text-sm text-cream-ink/55 group-hover:text-bone/70 leading-relaxed font-light">
                   {item.desc}
                 </p>
+                <ArrowUpRight
+                  size={22}
+                  className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                  style={{ color: "#ff5a1f" }}
+                />
               </div>
             </FadeIn>
           ))}

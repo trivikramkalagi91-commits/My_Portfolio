@@ -1,16 +1,30 @@
 import type { Metadata } from "next";
-import { Kanit } from "next/font/google";
+import { Fraunces, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const kanit = Kanit({
-  variable: "--font-kanit",
+const fraunces = Fraunces({
+  variable: "--font-display",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "900"],
+  style: ["normal", "italic"],
+});
+
+const grotesk = Space_Grotesk({
+  variable: "--font-sans",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "Trivikram kalagi -- Software Engineer",
-  description: "Portfolio of Trivikram Kalagi, Software Engineer | Open Source Contributor | AI Explorer.",
+  title: "Trivikram Kalagi — Software Engineer & AI Automation Builder",
+  description:
+    "Portfolio of Trivikram Kalagi — Software Engineer, open-source contributor (GSSOC), hackathon winner, and AI automation explorer building intelligent products.",
 };
 
 export default function RootLayout({
@@ -19,12 +33,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${kanit.variable} dark`}>
-      <body className="font-sans bg-[#0C0C0C] text-[#D7E2EA] antialiased min-h-screen relative overflow-x-clip select-none">
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${grotesk.variable} ${mono.variable}`}
+    >
+      <body className="bg-ink text-bone antialiased overflow-x-clip selection:bg-accent selection:text-ink">
         {children}
       </body>
     </html>
   );
 }
-
-
