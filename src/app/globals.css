@@ -151,6 +151,13 @@ body {
 .proj-row:hover { color: #000; }
 .proj-row > * { position: relative; z-index: 1; }
 
+/* Zebra striping for clear row separation */
+.acc-row:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
+.proj-row:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
+.acc-row { border-top-width: 2px; }
+.proj-row { border-top-width: 2px; }
+.acc-row:last-child, .proj-row:last-child { border-bottom-width: 2px; }
+
 /* ---------- Floating code window ---------- */
 .code-window {
   background: #0d0d0f;

@@ -51,9 +51,9 @@ export default function ExperienceSection() {
           </h2>
         </FadeIn>
 
-        <div className="relative max-w-5xl">
+        <div className="relative max-w-7xl">
           <div className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-lime via-lime/40 to-transparent" />
-          <div className="space-y-10">
+          <div className="space-y-12">
             {timeline.map((t, i) => (
               <FadeIn key={t.title} delay={0.15 + i * 0.08} y={25}>
                 <div className="relative flex gap-6 sm:gap-8">

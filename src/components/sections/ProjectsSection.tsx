@@ -16,7 +16,7 @@ const projects = [
     title: "SIDDHI",
     status: "In Progress",
     desc: "AI crime-analytics platform for the Karnataka State Police — natural-language queries → actionable investigative intelligence.",
-    tech: "Python · NLP · AI · Data Analytics",
+    tech: ["Python", "NLP", "AI", "Data Analytics"],
     github: "https://github.com/trivikramkalagi91-commits/SIDDHI.git",
     live: null,
   },
@@ -26,7 +26,7 @@ const projects = [
     title: "MediExpiry AI",
     status: "Shipped",
     desc: "Healthcare platform tracking medicine expiry with intelligent alerts — reduces medical waste, deployed on Vercel.",
-    tech: "JavaScript · AI · Web App",
+    tech: ["JavaScript", "AI", "Web App"],
     github: "https://github.com/trivikramkalagi91-commits/MediExpiry.git",
     live: "https://medi-expiry.vercel.app",
   },
@@ -36,7 +36,7 @@ const projects = [
     title: "Kisan Platform",
     status: "3rd Prize",
     desc: "Agri-tech platform for farmers — yield estimation, weather guidance, crop insights. 3rd Prize winner.",
-    tech: "JavaScript · Web · AgriTech",
+    tech: ["JavaScript", "Web", "AgriTech"],
     github: "https://github.com/trivikramkalagi91-commits/Kisan_Platform.git",
     live: "https://kisan-platform-nu.vercel.app",
   },
@@ -46,7 +46,7 @@ const projects = [
     title: "GSSOC Contributions",
     status: "10+ PRs",
     desc: "10+ merged PRs through GirlScript Summer of Code — UI modules, bug fixes, system integrations.",
-    tech: "Git · GitHub · UI · Automation",
+    tech: ["Git", "GitHub", "UI", "Automation"],
     github: "https://github.com/trivikramkalagi91-commits",
     live: null,
   },
@@ -77,36 +77,48 @@ export default function ProjectsSection() {
                 href={p.live || p.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="proj-row group block px-2 py-9 sm:py-11 cursor-pointer"
+                className="proj-row group block px-2 py-10 sm:py-12 cursor-pointer"
               >
-                <div className="flex items-center gap-5 sm:gap-8">
-                  <span className="font-mono text-sm text-current opacity-50 w-8 flex-shrink-0">
+                <div className="grid grid-cols-12 gap-4 sm:gap-6 items-center">
+                  <span className="col-span-2 sm:col-span-1 font-mono text-sm text-current opacity-50">
                     {p.num}
                   </span>
-                  <div className="flex-grow min-w-0">
-                    <div className="flex flex-wrap items-center gap-3 mb-1.5">
+
+                  <div className="col-span-10 sm:col-span-6 min-w-0">
+                    <div className="flex flex-wrap items-center gap-3 mb-2">
                       <span className="font-mono text-[10px] uppercase tracking-[0.25em] opacity-60">
                         {p.category}
                       </span>
-                      <span className="px-2 py-0.5 rounded-full border border-current/30 font-mono text-[9px] uppercase tracking-wider">
+                      <span className="px-2.5 py-1 rounded-full border border-current/30 font-mono text-[9px] uppercase tracking-wider">
                         {p.status}
                       </span>
                     </div>
-                    <h3 className="display text-3xl sm:text-4xl md:text-5xl tracking-wide truncate">
+                    <h3 className="display text-3xl sm:text-4xl md:text-5xl tracking-wide leading-none">
                       {p.title}
                     </h3>
-                    <p className="mt-2 text-sm opacity-70 max-w-2xl">{p.desc}</p>
-                    <p className="mt-2 font-mono text-[10px] uppercase tracking-wider opacity-50">
-                      {p.tech}
+                    <p className="mt-3 text-sm sm:text-base opacity-70 leading-relaxed max-w-xl">
+                      {p.desc}
                     </p>
                   </div>
-                  <div className="flex-shrink-0 flex items-center gap-3">
-                    <span className="hidden sm:inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider opacity-70">
+
+                  <div className="col-span-8 sm:col-span-3 flex flex-wrap gap-1.5 sm:justify-end">
+                    {p.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="px-2.5 py-1 rounded-full border border-current/25 font-mono text-[9px] uppercase tracking-wider opacity-80"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="col-span-4 sm:col-span-2 flex items-center justify-end gap-3">
+                    <span className="hidden md:inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider opacity-70">
                       <GithubIcon size={13} /> Code
                     </span>
                     <ArrowUpRight
-                      size={26}
-                      className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                      size={28}
+                      className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 flex-shrink-0"
                     />
                   </div>
                 </div>
