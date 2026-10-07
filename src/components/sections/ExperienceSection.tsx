@@ -1,36 +1,50 @@
 "use client";
 import React from "react";
 import FadeIn from "../FadeIn";
-import { GraduationCap, GitPullRequest, Trophy, Bot } from "lucide-react";
+import { GraduationCap, GitPullRequest, Trophy, Terminal, Award } from "lucide-react";
 
 const timeline = [
   {
-    icon: Bot,
-    period: "2024 — Now",
-    title: "AI Automation Builder",
-    org: "Self-driven · SIDDHI",
-    desc: "Engineering AI agents & LLM pipelines. Leading AI on SIDDHI for the Karnataka State Police. Building toward founding an AI automation startup.",
+    icon: Trophy,
+    period: "2026",
+    title: "3rd Place Winner — YC Fall 2026 × Moss Sprint",
+    org: "Litigo · ₹9,500 Prize",
+    desc: "Led core backend & product building for Litigo during the YC Fall 2026 × Moss Zero-Latency Builder Sprint, securing 3rd Place overall.",
+  },
+  {
+    icon: Award,
+    period: "2026",
+    title: "1st Prize Winner — CSIT IoT Expo",
+    org: "IoT Health Tracker Project",
+    desc: "Developed an IoT Multi-Parameter Health Tracking System monitoring vital parameters in real-time, securing 1st Prize at the CSIT Department IoT Expo.",
   },
   {
     icon: Trophy,
-    period: "2024 — 2025",
-    title: "Hackathon Winner",
-    org: "Multiple Hackathons",
-    desc: "Shipped MediExpiry AI & Kisan Platform under pressure — Kisan Platform secured 3rd Prize.",
+    period: "2026",
+    title: "2nd Place — College 3-Hour Hackathon",
+    org: "Rapid Prototyping Sprint",
+    desc: "Built and demonstrated a working software solution under a strict 3-hour constraint to win 2nd Place.",
   },
   {
     icon: GitPullRequest,
-    period: "2024",
-    title: "Open-Source Contributor",
-    org: "GirlScript Summer of Code",
-    desc: "10+ merged PRs across real repos — SecDev, StorySpark AI, reframe. UI modules, bug fixes, system integrations.",
+    period: "2026",
+    title: "GirlScript Summer of Code 2026 (GSSOC)",
+    org: "Open-Source Contributor",
+    desc: "Merged 10+ pull requests across open-source repositories — added UI components, fixed system bugs, and added automated code formatting scripts.",
+  },
+  {
+    icon: Terminal,
+    period: "2026",
+    title: "Top 50 Selection — Scrape-Verse Hackathon 2026",
+    org: "Tathya Project",
+    desc: "Core developer on Tathya, a data extraction platform selected in the Top 50 of Scrape-Verse Hackathon 2026.",
   },
   {
     icon: GraduationCap,
     period: "2022 — 2026",
     title: "B.Tech Computer Science",
     org: "REVA University, Bengaluru",
-    desc: "Strong foundations in DSA & algorithms, shipping real projects on the side.",
+    desc: "Building foundations in Python, Data Structures & Algorithms (arrays, binary search, sorting, recursion), and software development.",
   },
 ];
 

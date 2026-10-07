@@ -2,9 +2,9 @@
 import React from "react";
 
 const items = [
-  "AI Agents", "LLM Orchestration", "Full-Stack", "NLP", "Python",
-  "Next.js", "TypeScript", "Open Source", "Automation", "Hackathons",
-  "DSA", "Data Analytics",
+  "Python", "C++", "C", "Data Structures & Algorithms", "NumPy",
+  "Pandas (Learning)", "Litigo (3rd Place YC x Moss)", "GSSOC 2026",
+  "IoT Expo (1st Prize)", "Binary Search", "Arrays & Sorting", "Recursion",
 ];
 
 export default function MarqueeSection() {

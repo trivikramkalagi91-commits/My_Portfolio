@@ -3,30 +3,30 @@ import React from "react";
 import FadeIn from "../FadeIn";
 import { ChevronDown } from "lucide-react";
 
-const services = [
+const focusAreas = [
   {
     num: "01",
-    title: "Full-Stack Development",
-    desc: "End-to-end web apps with Next.js, React, Node.js — from database to deployed UI. I ship production-ready products fast.",
-    tags: ["Next.js", "React", "Node.js", "TypeScript"],
+    title: "DSA & Problem Solving",
+    desc: "Practicing core data structures & algorithms — arrays, searching, binary search, sorting, recursion, prefix-sum concepts, and Kadane's algorithm for placement preparation.",
+    tags: ["Python", "C++", "DSA", "Problem Solving"],
   },
   {
     num: "02",
-    title: "AI Agents & Automation",
-    desc: "Designing agentic workflows, LLM pipelines, and terminal agents that automate real tasks — with tool-use and orchestration.",
-    tags: ["LLMs", "Agentic AI", "Prompt Eng.", "Automation"],
+    title: "Python & Data Foundations",
+    desc: "Solid mastery in Python fundamentals, advanced Python concepts, OOP, file handling, and exception handling. Working with NumPy and currently learning Pandas.",
+    tags: ["Python", "OOP", "File Handling", "NumPy", "Pandas (Learning)"],
   },
   {
     num: "03",
-    title: "Backend & API Development",
-    desc: "Robust APIs, databases, and data pipelines that scale. Clean architecture, real integrations, and monitoring.",
-    tags: ["Python", "REST APIs", "SQL", "Data"],
+    title: "Building AI-Powered Products",
+    desc: "Developing backend software and practical AI applications — such as Litigo (3rd Place YC x Moss Sprint), crime analytics solutions, and healthcare tools.",
+    tags: ["Python", "AI Products", "Backend Logic", "Software Projects"],
   },
   {
     num: "04",
-    title: "AI & Automation Consulting",
-    desc: "Helping teams identify what to automate, prototype AI features, and integrate LLMs into existing products.",
-    tags: ["Prototyping", "LLM Integration", "Workflow"],
+    title: "Open Source & Hackathons",
+    desc: "Active open-source participant in GirlScript Summer of Code 2026 (10+ merged PRs) and competitive hackathon builder across sprint challenges and IoT expos.",
+    tags: ["GSSOC 2026", "Git", "GitHub", "Open Source", "Hackathons"],
   },
 ];
 
@@ -36,19 +36,19 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <FadeIn delay={0} y={20}>
           <div className="flex items-center gap-4 mb-6">
-            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-lime">02 / What I can do</span>
+            <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-lime">02 / Focus &amp; Capabilities</span>
             <span className="h-px flex-grow bg-line" />
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1} y={30}>
           <h2 className="display text-5xl sm:text-6xl lg:text-7xl text-ink mb-14 leading-[0.95]">
-            What I can <span className="text-lime">do</span> for you
+            What I <span className="text-lime">focus</span> on &amp; build
           </h2>
         </FadeIn>
 
         <div>
-          {services.map((s, i) => (
+          {focusAreas.map((s, i) => (
             <FadeIn key={s.num} delay={0.15 + i * 0.07} y={20}>
               <div className={`acc-row group ${i === 0 ? "is-open" : ""}`}>
                 <div className="flex items-center gap-5 sm:gap-8 py-9 sm:py-11 px-2 cursor-default">

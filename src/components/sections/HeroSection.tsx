@@ -53,8 +53,8 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
           <div className="hidden lg:flex items-center gap-6">
             {[
               { label: "About", id: "about" },
-              { label: "Services", id: "focus" },
-              { label: "Work", id: "projects" },
+              { label: "Focus", id: "focus" },
+              { label: "Projects", id: "projects" },
               { label: "Journey", id: "experience" },
             ].map((l) => (
               <a
@@ -85,7 +85,7 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
               <div className="inline-flex items-center gap-2 mb-6 border border-line rounded-full px-4 py-1.5">
                 <span className="w-2 h-2 rounded-full bg-lime animate-pulse" />
                 <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted">
-                  Software Engineer · AI Automation
+                  CS Student · Python &amp; DSA Learner · Product Builder
                 </span>
               </div>
             </FadeIn>
@@ -104,9 +104,9 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
 
             <FadeIn delay={0.35} y={20}>
               <p className="mt-6 max-w-lg text-ink/70 text-base leading-relaxed font-light">
-                I build <span className="text-lime font-semibold">AI agents &amp; automation</span> that
-                do the real work — from crime analytics for the Karnataka State Police to
-                hackathon-winning platforms and open-source tools.
+                Building <span className="text-lime font-semibold">AI-powered products</span>, practicing
+                DSA &amp; problem solving, and shipping award-winning software projects — from the 3rd-place winning{" "}
+                <span className="text-ink font-semibold">Litigo</span> app to IoT health tracking systems.
               </p>
             </FadeIn>
 
@@ -116,7 +116,7 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
                   onClick={onContactClick}
                   className="btn-lime rounded-full px-7 py-3.5 text-xs font-bold uppercase tracking-wider cursor-pointer inline-flex items-center gap-2"
                 >
-                  Hire me <ArrowRight size={14} />
+                  Get in touch <ArrowRight size={14} />
                 </button>
                 <a
                   href="#projects"
@@ -131,9 +131,9 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
             <FadeIn delay={0.65} y={20}>
               <div className="mt-10 flex gap-10">
                 {[
+                  { n: "3rd", l: "YC x Moss Sprint" },
+                  { n: "1st", l: "IoT Expo Prize" },
                   { n: "10+", l: "Merged PRs" },
-                  { n: "3rd", l: "Hackathon Prize" },
-                  { n: "4+", l: "Projects" },
                 ].map((s) => (
                   <div key={s.l}>
                     <div className="display text-3xl sm:text-4xl text-lime">{s.n}</div>
@@ -146,7 +146,7 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
             </FadeIn>
           </div>
 
-          {/* Right: portrait + floating code windows */}
+          {/* Right: portrait + code window */}
           <div className="lg:col-span-5 relative h-[460px] hidden xl:block">
             <FadeIn delay={0.4} y={30}>
               <div className="absolute inset-0 flex items-center justify-center">
@@ -170,29 +170,27 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
               </div>
 
               {/* Floating code windows */}
-              <div className="float-a absolute -top-4 -left-14 w-[210px] z-20">
+              <div className="float-a absolute -top-4 -left-14 w-[220px] z-20">
                 <CodeWindow
-                  title="agent.py"
+                  title="skills.py"
                   lines={[
-                    { text: "from llm import AgentLoop", color: "#ccff00" },
-                    { text: "" },
-                    { text: "agent = AgentLoop(" },
-                    { text: '  task="crime_analytics",', color: "#8ab4f8" },
-                    { text: "  tools=[nlp, db, geo]", color: "#8ab4f8" },
-                    { text: ")" },
-                    { text: "agent.run()  # Zone 4 match ✓", color: "#34d399" },
+                    { text: "def my_profile():", color: "#ccff00" },
+                    { text: '  lang = ["Python", "C++", "C"]', color: "#8ab4f8" },
+                    { text: '  dsa = ["Arrays", "BinarySearch"]', color: "#8ab4f8" },
+                    { text: '  data = ["NumPy", "Pandas (learning)"]', color: "#8ab4f8" },
+                    { text: "  return lang, dsa, data", color: "#34d399" },
                   ]}
                 />
               </div>
 
-              <div className="float-b absolute bottom-0 -right-12 w-[190px] z-20">
+              <div className="float-b absolute bottom-0 -right-12 w-[200px] z-20">
                 <CodeWindow
-                  title="terminal — zsh"
+                  title="achievements.sh"
                   lines={[
-                    { text: "$ deploy siddhi --prod", color: "#f2f2ed" },
-                    { text: "✓ build passed (17.3s)", color: "#34d399" },
-                    { text: "✓ 10+ PRs merged (GSSOC)", color: "#34d399" },
-                    { text: "$ _", color: "#ccff00" },
+                    { text: "$ litigo --sprint", color: "#f2f2ed" },
+                    { text: "✓ 3rd Place (YC x Moss)", color: "#34d399" },
+                    { text: "✓ 1st Prize IoT Expo", color: "#34d399" },
+                    { text: "✓ 10+ PRs Merged (GSSOC)", color: "#34d399" },
                   ]}
                 />
               </div>
@@ -201,7 +199,7 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
                 <div className="code-window px-4 py-3 flex items-center gap-2.5">
                   <Terminal size={14} className="text-lime" />
                   <span className="font-mono text-[10px] text-ink/80">
-                    automating... <span className="caret" />
+                    learning &amp; building... <span className="caret" />
                   </span>
                 </div>
               </div>
